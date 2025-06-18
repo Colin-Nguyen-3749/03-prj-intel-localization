@@ -1,0 +1,288 @@
+/* Add your CSS here */
+
+/* Use a modern, sleek font for the whole page */
+body {
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  margin: 0; /* Remove default margin */
+}
+
+/* Hero section styles */
+.hero {
+  /* Center the content */
+  padding: 0 20px; /* Remove top padding so background starts at the very top */
+  /* Dark blue gradient background */
+  background: linear-gradient(135deg, #0a2342 0%, #185a9d 100%);
+  margin-bottom: 32px; /* Add space below the hero section so cards are directly underneath */
+  /* Make the background stretch to the edges */
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  box-sizing: border-box;
+  /* Use flexbox to arrange content vertically and center it */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Vertically center content */
+  text-align: center;
+  min-height: 300px; /* Minimum height for the hero section */
+  overflow: hidden;   /* Hide streaks outside the hero */
+}
+
+/* Logo style */
+.hero-logo {
+  width: 120px; /* Adjust size as needed */
+  margin-bottom: 20px;
+}
+
+/* Headline style */
+.hero-headline {
+  font-size: 2em;
+  margin: 10px 0;
+  color: #2e8ed7; /* Intel blue */
+}
+
+/* Subheadline style */
+.hero-subheadline {
+  font-size: 1.2em;
+  color: #fff; /* White text for readability */
+  margin-bottom: 32px; /* Bigger space below the subheading */
+  /* The text will be updated in the HTML file */
+  margin-left: 80px;  /* Even more space on the left */
+  margin-right: 80px; /* Even more space on the right */
+}
+
+/* Remove styles for the old blue box if present */
+/* Example:
+.old-blue-box {
+  display: none;
+}
+*/
+
+/* Cards container styles */
+.cards-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 16px 20px;
+  /* Make the container a bit narrower to create equal margins on both sides */
+  max-width: 1100px; /* Container width stays the same for margins */
+  margin: 0 auto;    /* Center the cards container */
+  scroll-snap-type: x mandatory;
+  box-sizing: border-box;
+}
+
+/* Card styles */
+.card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  min-width: 256px;   /* 4 cards * 256px + 3 gaps * 16px = 1100px */
+  max-width: 256px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  flex: 0 0 256px;    /* Always 256px wide */
+  box-sizing: border-box;
+  scroll-snap-align: start; /* Snap each card to the start of the container */
+}
+
+/* Card h2 heading style */
+.card h2 {
+  color: #2196f3;      /* Bright, readable blue */
+  text-align: center;
+  font-size: 1.15em;
+  margin: 12px 0 6px 0;
+  font-weight: bold;
+}
+
+/* Card h3 heading style */
+.card h3 {
+  color: #0a2342;      /* Darker blue */
+  text-align: center;
+  font-size: 1em;
+  margin: 10px 0 8px 0;
+  font-weight: bold;
+}
+
+/* Make images inside cards the exact same (larger) size */
+.card img {
+  width: 100%;
+  height: 160px;        /* Increased height for bigger images */
+  object-fit: cover;
+  display: block;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+/* Adjust the first card's image to show the lower part (faces) */
+.card.first-card img {
+  object-position: center 60%; /* Move the image focus lower */
+}
+
+/* Special hover overlay for all cards */
+.card.first-card,
+.card.second-card,
+.card.third-card,
+.card.fourth-card,
+.card.fifth-card,
+.card.sixth-card,
+.card.seventh-card,
+.card.eighth-card,
+.card.ninth-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* The overlay itself (hidden by default) */
+.card.first-card .card-hover-overlay,
+.card.second-card .card-hover-overlay,
+.card.third-card .card-hover-overlay,
+.card.fourth-card .card-hover-overlay,
+.card.fifth-card .card-hover-overlay,
+.card.sixth-card .card-hover-overlay,
+.card.seventh-card .card-hover-overlay,
+.card.eighth-card .card-hover-overlay,
+.card.ninth-card .card-hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 35, 66, 0.92); /* Dark blue, mostly opaque */
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  padding: 20px;
+  font-size: 1em;
+  z-index: 2;
+  pointer-events: none;
+  box-sizing: border-box;
+  word-break: break-word;
+  line-height: 1.4;
+}
+
+/* Show overlay on hover */
+.card.first-card:hover .card-hover-overlay,
+.card.second-card:hover .card-hover-overlay,
+.card.third-card:hover .card-hover-overlay,
+.card.fourth-card:hover .card-hover-overlay,
+.card.fifth-card:hover .card-hover-overlay,
+.card.sixth-card:hover .card-hover-overlay,
+.card.seventh-card:hover .card-hover-overlay,
+.card.eighth-card:hover .card-hover-overlay,
+.card.ninth-card:hover .card-hover-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Add animated light blue streaks to the hero section */
+.hero-streaks {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Individual streak style */
+.hero-streak {
+  position: absolute;
+  height: 4px;
+  width: 120px;
+  background: linear-gradient(90deg, rgba(33,150,243,0.15) 0%, rgba(33,150,243,0.5) 50%, rgba(33,150,243,0.15) 100%);
+  border-radius: 2px;
+  opacity: 0.7;
+  animation: streak-move 2.5s linear infinite;
+}
+
+/* Different streaks start at different times and positions */
+.hero-streak.streak1 { top: 15%; left: -150px; animation-delay: 0s; }
+.hero-streak.streak2 { top: 30%; left: -200px; animation-delay: 0.7s; width: 180px; opacity: 0.5; }
+.hero-streak.streak3 { top: 45%; left: -100px; animation-delay: 1.2s; width: 90px; opacity: 0.4; }
+.hero-streak.streak4 { top: 60%; left: -180px; animation-delay: 1.7s; width: 140px; opacity: 0.6; }
+.hero-streak.streak5 { top: 75%; left: -120px; animation-delay: 2.1s; width: 110px; opacity: 0.5; }
+.hero-streak.streak6 { top: 85%; left: -160px; animation-delay: 1.4s; width: 160px; opacity: 0.3; }
+
+/* Keyframes for streak movement */
+@keyframes streak-move {
+  0% {
+    left: -200px;
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 0.7;
+  }
+  100% {
+    left: 100vw;
+    opacity: 0;
+  }
+}
+
+/* Make sure hero content is above the streaks */
+.hero > *:not(.hero-streaks) {
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive: On small screens, stack cards vertically */
+@media (max-width: 1240px) {
+  .cards-container {
+    max-width: 100vw; /* Allow scrolling if not enough space for 4 cards */
+  }
+}
+
+@media (max-width: 600px) {
+  .cards-container {
+    flex-direction: column;
+    overflow-x: visible; /* No horizontal scroll on mobile */
+    gap: 16px;
+    max-width: 100%;
+    scroll-snap-type: none;
+  }
+  .card {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    flex: none;
+    scroll-snap-align: none;
+  }
+}
+
+/* If you have a section with the class 'welcome-section', add the gradient background below */
+/* This will give the 'Welcome to Intel Sustainability' section a dark blue gradient background */
+.welcome-section {
+  background: linear-gradient(135deg, #0a2342 0%, #185a9d 100%);
+  color: #fff; /* Make text white for readability */
+  text-align: center; /* Center the text */
+  padding: 40px 20px; /* Add space inside the section */
+  margin-bottom: 32px; /* Space below the section */
+}
+
+/* Bottom info section styles */
+.bottom-info-section {
+  background: #0a2342; /* Dark blue background */
+  color: #fff;         /* White text for readability */
+  text-align: center;  /* Center the text */
+  padding: 20px 10px;  /* Add space above and below */
+  font-size: 1em;      /* Normal readable size */
+  margin-top: 0;       /* Remove extra space above so it's right below the cards */
+}
+
+
+/* Bottom info section styles */
+.bottom-info-section {
+  background: #0a2342; /* Dark blue background */
+  color: #fff;         /* White text for readability */
+  text-align: center;  /* Center the text */
+  padding: 20px 10px;  /* Add space above and below */
+  font-size: 1em;      /* Normal readable size */
+  margin-top: 0;       /* Remove extra space above so it's right below the cards */
+}
