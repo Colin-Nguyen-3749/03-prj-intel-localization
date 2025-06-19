@@ -153,22 +153,18 @@
     <div class="row">
       <!-- First column: Innovation -->
       <div class="col-12 col-md-4 mb-4">
-        <!-- Use a simple box for content -->
         <div class="p-3 border bg-light h-100">
-          <!-- Icon and heading -->
           <h2>
-            <!-- Bootstrap icon for Innovation -->
             <i class="bi bi-lightbulb-fill text-primary"></i>
             Innovation
           </h2>
-          <!-- Column text -->
           <p>
             Intel drives innovation in technology, creating faster and more efficient processors for a better future.
           </p>
-          <!-- Learn More link styled as a Bootstrap button -->
-          <a href="#" class="btn btn-primary">
+          <!-- Learn More button: always dark blue, arrow points away from text -->
+          <a href="#" class="btn btn-primary learn-more-btn">
             Learn More
-            <i class="bi bi-arrow-left"></i>
+            <i class="bi bi-arrow-right"></i>
           </a>
         </div>
       </div>
@@ -176,16 +172,15 @@
       <div class="col-12 col-md-4 mb-4">
         <div class="p-3 border bg-light h-100">
           <h2>
-            <!-- Bootstrap icon for Sustainability -->
             <i class="bi bi-leaf-fill text-success"></i>
             Sustainability
           </h2>
           <p>
             Sustainability is at the heart of Intel’s mission, focusing on reducing environmental impact and promoting green practices.
           </p>
-          <a href="#" class="btn btn-success">
+          <a href="#" class="btn btn-primary learn-more-btn">
             Learn More
-            <i class="bi bi-arrow-left"></i>
+            <i class="bi bi-arrow-right"></i>
           </a>
         </div>
       </div>
@@ -193,16 +188,15 @@
       <div class="col-12 col-md-4 mb-4">
         <div class="p-3 border bg-light h-100">
           <h2>
-            <!-- Bootstrap icon for Community -->
             <i class="bi bi-people-fill text-info"></i>
             Community
           </h2>
           <p>
             Intel supports communities worldwide through education, outreach, and responsible business practices.
           </p>
-          <a href="#" class="btn btn-info text-white">
+          <a href="#" class="btn btn-primary learn-more-btn">
             Learn More
-            <i class="bi bi-arrow-left"></i>
+            <i class="bi bi-arrow-right"></i>
           </a>
         </div>
       </div>
@@ -256,5 +250,28 @@
       document.documentElement.setAttribute('dir', 'ltr');
     }
   </script>
+
+  <!-- Add this style block before the closing </body> tag or in your CSS file -->
+  <style>
+/* filepath: /workspaces/03-prj-intel-localization/style.css */
+/* ...existing code... */
+
+/* Make all Learn More buttons the same dark blue and adjust arrow direction for RTL/LTR */
+.learn-more-btn {
+  background-color: #0a2342 !important; /* Intel dark blue */
+  border-color: #0a2342 !important;
+  color: #fff !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+}
+
+/* Arrow direction: right for LTR, left for RTL */
+html[dir="rtl"] .learn-more-btn .bi-arrow-right {
+  transform: scaleX(-1); /* Flip the arrow for RTL */
+}
+
+/* ...existing code... */
+</style>
 </body>
 </html>

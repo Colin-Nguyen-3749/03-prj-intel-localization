@@ -276,13 +276,17 @@ body {
   margin-top: 0;       /* Remove extra space above so it's right below the cards */
 }
 
+/* Make all Learn More buttons a lighter blue and adjust arrow direction for RTL/LTR */
+.learn-more-btn {
+  background-color: #2e8ed7 !important; /* Lighter Intel blue */
+  border-color: #2e8ed7 !important;
+  color: #fff !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25em;
+}
 
-/* Bottom info section styles */
-.bottom-info-section {
-  background: #0a2342; /* Dark blue background */
-  color: #fff;         /* White text for readability */
-  text-align: center;  /* Center the text */
-  padding: 20px 10px;  /* Add space above and below */
-  font-size: 1em;      /* Normal readable size */
-  margin-top: 0;       /* Remove extra space above so it's right below the cards */
+/* Arrow direction: right for LTR, left for RTL */
+html[dir="rtl"] .learn-more-btn .bi-arrow-right {
+  transform: scaleX(-1); /* Flip the arrow for RTL */
 }
