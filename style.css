@@ -276,14 +276,22 @@ body {
   margin-top: 0;       /* Remove extra space above so it's right below the cards */
 }
 
-/* Make all Learn More buttons a lighter blue and adjust arrow direction for RTL/LTR */
-.learn-more-btn {
-  background-color: #2e8ed7 !important; /* Lighter Intel blue */
+/* Make all Learn More buttons a lighter blue (#2e8ed7) and adjust arrow direction for RTL/LTR */
+.learn-more-btn,
+.btn.btn-primary.learn-more-btn {
+  background-color: #2e8ed7 !important;
   border-color: #2e8ed7 !important;
   color: #fff !important;
   display: inline-flex;
   align-items: center;
   gap: 0.25em;
+}
+
+/* Make the subscribe button a lighter blue (#2e8ed7) */
+.btn.btn-primary[type="submit"] {
+  background-color: #2e8ed7 !important;
+  border-color: #2e8ed7 !important;
+  color: #fff !important;
 }
 
 /* Arrow direction: right for LTR, left for RTL */
