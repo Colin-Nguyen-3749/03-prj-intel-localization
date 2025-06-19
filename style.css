@@ -90,7 +90,7 @@ body {
 
 /* Card h2 heading style */
 .card h2 {
-  color: #2196f3;      /* Bright, readable blue */
+  color: #2a74ac;      /* Bright, readable blue */
   text-align: center;
   font-size: 1.15em;
   margin: 12px 0 6px 0;
@@ -279,8 +279,8 @@ body {
 /* Make all Learn More buttons a lighter blue (#2e8ed7) and adjust arrow direction for RTL/LTR */
 .learn-more-btn,
 .btn.btn-primary.learn-more-btn {
-  background-color: #2e8ed7 !important;
-  border-color: #2e8ed7 !important;
+  background-color: #2a74ac !important;
+  border-color: #2a74ac!important;
   color: #fff !important;
   display: inline-flex;
   align-items: center;
@@ -289,8 +289,8 @@ body {
 
 /* Make the subscribe button a lighter blue (#2e8ed7) */
 .btn.btn-primary[type="submit"] {
-  background-color: #2e8ed7 !important;
-  border-color: #2e8ed7 !important;
+  background-color: #2a74ac !important;
+  border-color: #2a74ac !important;
   color: #fff !important;
 }
 
