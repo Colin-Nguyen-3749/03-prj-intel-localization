@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="rtl">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -215,11 +215,46 @@
     -->
   </section>
 
+  <!-- Newsletter subscription form section -->
+  <section class="container my-5">
+    <!-- This form lets users subscribe to the newsletter -->
+    <h2 class="mb-3">
+      <!-- Envelope icon for visual cue -->
+      <i class="bi bi-envelope-fill text-primary"></i>
+      Subscribe to our Sustainability Newsletter
+    </h2>
+    <form>
+      <!-- Email input field -->
+      <div class="mb-3">
+        <label for="newsletterEmail" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="newsletterEmail" placeholder="Enter your email">
+      </div>
+      <!-- Subscribe button -->
+      <button type="submit" class="btn btn-primary">
+        Subscribe
+      </button>
+    </form>
+  </section>
+
   <!-- Bottom info section moved here to stay at the bottom of the page -->
   <section>
     <div class="bottom-info-section">
       <p>Scroll to view timeline | Hover over cards to learn more!</p>
     </div> 
   </section>
+
+  <!-- Script to set direction based on language -->
+  <script>
+    // List of RTL language codes
+    var rtlLangs = ['ar', 'he', 'fa', 'ur'];
+    // Get the lang attribute from the <html> tag
+    var lang = document.documentElement.lang;
+    // If the language is RTL, set dir to rtl, otherwise set to ltr
+    if (rtlLangs.includes(lang)) {
+      document.documentElement.setAttribute('dir', 'rtl');
+    } else {
+      document.documentElement.setAttribute('dir', 'ltr');
+    }
+  </script>
 </body>
 </html>
