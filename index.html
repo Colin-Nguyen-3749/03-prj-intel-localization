@@ -240,22 +240,51 @@
   <!-- Bottom info section moved here to stay at the bottom of the page -->
   <section>
     <div class="bottom-info-section">
-      <p>Scroll to view timeline | Hover over cards to learn more!</p>
+      <!-- Simple navigation links for beginners -->
+      <a href="#" style="color: #fff; text-decoration: underline; margin: 0 10px;">Privacy Policy</a>
+      |
+      <a href="#" style="color: #fff; text-decoration: underline; margin: 0 10px;">Terms of Use</a>
+      |
+      <a href="#" style="color: #fff; text-decoration: underline; margin: 0 10px;">Contact</a>
     </div> 
   </section>
 
-  <!-- Script to set direction based on language -->
+  <!-- Script to set direction based on language and detect language changes -->
   <script>
-    // List of RTL language codes
+    // List of RTL language codes (including Hebrew 'he')
     var rtlLangs = ['ar', 'he', 'fa', 'ur'];
-    // Get the lang attribute from the <html> tag
-    var lang = document.documentElement.lang;
-    // If the language is RTL, set dir to rtl, otherwise set to ltr
-    if (rtlLangs.includes(lang)) {
-      document.documentElement.setAttribute('dir', 'rtl');
-    } else {
-      document.documentElement.setAttribute('dir', 'ltr');
+
+    // Function to update direction based on current lang attribute
+    function updateDirByLang() {
+      var lang = document.documentElement.lang;
+      // Check for exact match or language prefix (e.g., 'he' or 'he-IL')
+      var isRTL = rtlLangs.some(function(code) {
+        return lang === code || lang.startsWith(code + '-');
+      });
+      if (isRTL) {
+        document.documentElement.setAttribute('dir', 'rtl');
+      } else {
+        document.documentElement.setAttribute('dir', 'ltr');
+      }
     }
+
+    // Run on page load
+    updateDirByLang();
+
+    // Use MutationObserver to detect changes to the lang attribute (e.g., by Google Translate)
+    var observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'lang') {
+          updateDirByLang();
+        }
+      });
+    });
+
+    // Observe changes to the <html> element's attributes
+    observer.observe(document.documentElement, { attributes: true });
+
+    // Optionally, check periodically in case of dynamic translation tools that don't trigger MutationObserver
+    setInterval(updateDirByLang, 1000);
   </script>
 
   <!-- Add this style block before the closing </body> tag or in your CSS file -->
